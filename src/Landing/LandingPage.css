@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+
+#mainmain {
+    background: url('https://img.freepik.com/free-vector/blue-pink-halftone-background_53876-99004.jpg');
+    background-size: cover;
+    padding: 0px 20px;
+}
+
+#main {
+    width: 60%;
+    min-width: 1120px;
+    margin: auto;
+}
+
+.na {
+    width: 100%;
+    position: fixed;
+}
+
+#mainnav {
+    width: inherit;
+    position: fixed;
+}
+
+#welcome {
+    padding-top: 150px;
+    display: flex;
+}
+
+.description {
+    padding-top: 0%;
+    flex-basis: 50%;
+}
+
+.description h1{
+    font-size: 50px;
+     font-family: 'Poppins';
+    font-weight: 600;
+    color: #22225c;
+    animation: 1s ease-out 0s 1 slideInLefts;
+}
+
+.description p{
+    width: 90%;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.girlpicture {
+    width: 50%;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.198);
+}
+
+.girlpicture img {
+    width: 100%;
+    margin-left: -100px;
+}
+
+#features {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10%;
+    width: 100%;
+    margin: 90px auto;
+    padding-top: 40px;
+}
+
+.card {
+    border-radius: 15px;
+    height: 300px;
+    width: 400px;
+    background: #22225c;
+    border-bottom: 2px solid #22225c;
+    color: white;
+    font-size: 22px;
+    font-family: 'Poppins';
+    transition: 0.5s transform;
+}
+
+.card:hover {
+    transform: translateY(-40px);
+}
+
+.card p {
+    text-align: center;
+    padding-top: 15px;
+    width: 80%;
+    margin: auto;
+}
+
+.innercard {
+    border-radius: 15px;
+    height: 40%;
+    border-bottom: 4px solid rgb(255, 149, 0);
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background: #0378cd;
+    text-align: center;
+    display: flex;
+}
+
+.innercard h3{
+    width: 80%;
+    margin: auto;
+}
+
+.bluecard {
+    margin-top: 70px;
+}
+
+.begin {
+    animation: 1s ease-out 0s 1 slideInLeft;
+}
+
+#facts {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background: rgba(238, 238, 238, 0.187);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-family: 'Poppins';
+}
+
+#howitworks {
+    border-radius: 20px;
+    padding: 40px 0px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#howitworks h1 {
+    color: #000000;
+    font-family: 'Poppins';
+}
+
+#howitworks p {
+    background: #82828221;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.fact img {
+ width: 80%;
+ height: 180px;
+ transition: 0.5s transform, 2s rotate
+}
+
+.fact img:hover {
+    transform: translate3d(0px, -10px, 10px);
+    rotate: 30deg;
+   }
+
+.fact {
+    width: 200px;
+    font-size: 22px;
+}
+.fact .dash {
+    width: 250px;
+}
+
+@keyframes slideInLefts {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }

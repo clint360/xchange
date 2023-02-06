@@ -1,0 +1,7 @@
+.landingbutton {
+  transition: 0.3s filter;
+}
+
+.landingbutton:hover {
+  filter: invert();
+}

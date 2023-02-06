@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#mainnav {
+    height: 90px;
+    display: flex;
+    align-content: center;
+    border-bottom: 3px solid #29292941;
+    width: auto;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.321);
+}
+
+.logodiv {
+   float: left;
+   width: 30%;
+}
+
+.pageslists {
+
+  width: 40%;
+}
+
+li {
+  cursor: pointer;
+}
+
+.pageslists ul {
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    display: flex;
+    gap: 10%;
+  }
+
+  .pageslists ul li {
+    margin-top: 30px;
+    width: 25%;
+    font-size: 20px;
+    text-align: center;
+    float: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 40%;
+    border-bottom: 2px solid transparent;
+    transition: 1s border-bottom;
+  }
+  
+  .pageslists ul li:hover {
+   border-bottom: 2px solid #0378cd;;
+  }
+
+.login_and_signup {
+   float: right;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 30%;
+}
+
+.buttonsections {
+    display: flex;
+    margin-left: -10px;
+}

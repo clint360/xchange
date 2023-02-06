@@ -1,0 +1,84 @@
+.converterwindow {
+    position: absolute;
+    width: 360px;
+    background: white;
+    min-height: 200px;
+    left: 39%;
+    top: 26%;
+    z-index: 9999;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    font-size: 22px;
+    font-family: 'Poppins';
+    position: fixed;
+    animation: 0.1s ease-out 0s 1 slideInTop;
+}
+
+@keyframes slideInTop {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+.logosection {
+    margin: auto;
+    width: 200px;
+}
+
+.logosection img {
+    width: 100%;
+}
+
+.conversions input {
+  border: none;
+  border-bottom: 2px solid black;
+  width: 200px;
+  color: black;
+  font-size: 22px;
+  font-family: 'Poppins';
+  padding: 0px 10px;
+}
+
+.conversions input:focus {
+   outline: none;
+}
+
+.conversions select {
+    padding: 3px 5px;
+    margin: 0 10px;
+    width: 80px;
+    font-family: 'Poppins';
+    font-size: 18px;
+    background-color: rgb(34, 128, 186);
+    border: none;
+    color: white;
+    border-radius: 3px;
+}
+
+.conversions select:focus {
+    outline: none;
+}
+
+.confirm {
+    padding: 3px 7px;
+    font-family: 'Poppins';
+    font-size: 18px;
+    background-color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 3px;
+    color: white;
+}
+
+.confirm:hover {
+    background: orange;
+    color: black;
+}
+
+.m-2 {
+    margin-top: 15px;
+}
+

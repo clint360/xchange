@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+
+#mainmain {
+    background: url('https://img.freepik.com/free-vector/blue-pink-halftone-background_53876-99004.jpg');
+    background-size: cover;
+    padding: 0px 20px;
+    height: auto;
+}
+
+button {
+    cursor: pointer;
+}
+
+#main {
+    width: 60%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.154);
+    padding: 20px;
+    height: 100%;
+}
+
+.topsection {
+    padding-top: 30PX;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px;
+}
+
+.deposit-button {
+    padding: 10px;
+    color: white;
+    font-family: 'Poppins';
+    background: #22225c;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.2s background;
+}
+
+.deposit-button:hover {
+    background: orange;
+}
+
+.nav {
+    clear:both;
+    position: fixed;
+    width: inherit;
+    z-index: 9999;
+}
+
+.apparea {
+    padding-top: 100px;
+    height: 500px;
+    padding-bottom: 30px;
+    font-family: 'Poppins';
+}
+
+.displayin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.totalbalance {
+    color: #22225c;
+}
+
+#walletsection {
+    margin-top: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: auto;
+    padding-bottom: 40px;
+}
+
+#walletsection .header, #market h1{
+    text-align: center;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+}
+
+.wallets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.addcurrenciessection {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-bottom: 50%;
+}
+
+.addcurrenciessection select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("https://www.freepnglogos.com/uploads/plus-icon/plus-icon-plus-svg-png-icon-download-1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 2px;
+    margin-right: 2rem;
+    padding: 1rem;
+    padding-right: 2rem;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.5s zoom;
+}
+
+.addcurrenciessection select:hover {
+    zoom: 1.2;
+}
+
+.addc {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+#market {
+    margin-top: 180px;
+    padding-top: 120px;
+    background: rgba(255, 255, 255, 0.409);
+}
+
+#market img {
+    width: 100%;
+    margin: auto;
+}
+
+#market .statsimage {
+    width: 80%;
+    margin: auto;
+}
+
