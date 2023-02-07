@@ -60,7 +60,7 @@ function App() {
     <BrowserRouter>
     <Routes>
     <Route path='/' element={<LandingPage />}/>
-     <Route path='/app' element={<MainPage />} />
+     <Route path='/app' element={<MainPage />}  />
     </Routes>
     </BrowserRouter>
     </Provider>
