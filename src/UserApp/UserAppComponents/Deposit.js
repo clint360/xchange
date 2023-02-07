@@ -41,7 +41,7 @@ function Deposit({ closer, currency, depositer, depositStatus, maxbalance }) {
           </div>
           <div className='conversions'>
             <span>DEPOSIT </span>
-            <input type='number' ref={inputRef} max={maxbalance}/>{currency}
+            <input type='number' ref={inputRef} max={maxbalance} required/>{currency}
             <br />
             <div className='m-2'>
               <span>Into</span>

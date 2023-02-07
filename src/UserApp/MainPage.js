@@ -19,7 +19,7 @@ function MainPage() {
     currentCurrency,
     setCurrentCurrency,
     allCurrencies,
-    aChange, 
+    aChange,
     setAChange
   } = useContext(MainContext);
   const [selectedCurrency] = useState("");
@@ -33,7 +33,6 @@ function MainPage() {
 
   useEffect(() => {
     setUserWalletData(myCurrencies)
-    console.log(allCurrencies);
     for (let i = 0; i < allCurrencies.length; i++) {
       options.push({
         value: allCurrencies[i].name,
@@ -41,25 +40,24 @@ function MainPage() {
       });
     }
     setOptions(options);
-    console.log(options);
   }, [allCurrencies]);
 
- 
-  useEffect(()=>{
+
+  useEffect(() => {
     setTotalBalance(0);
     for (let i = 0; i < userWalletData.length; i++) {
-        setTotalBalance(
-          (prevbalance) =>
-            prevbalance + userWalletData[i].balance * userWalletData[i].value
-        );
+      setTotalBalance(
+        (prevbalance) =>
+          prevbalance + userWalletData[i].balance * userWalletData[i].value
+      );
+    }
+    for (let i = 0; i < allCurrencies.length; i++) {
+      if (displayCurrency === allCurrencies[i].name) {
+        setTotalBalance((prevbalance) => prevbalance / allCurrencies[i].value);
       }
-      for (let i = 0; i < allCurrencies.length; i++) {
-        if (displayCurrency === allCurrencies[i].name) {
-          setTotalBalance((prevbalance) => prevbalance / allCurrencies[i].value);
-        }
-      }
+    }
     setAChange('changess');
-  },[myCurrencies, selectedCurrency, displayCurrency, setAChange, aChange, userWalletData, allCurrencies])
+  }, [myCurrencies, selectedCurrency, displayCurrency, setAChange, aChange, userWalletData, allCurrencies])
 
   useEffect(() => {
     setUserWalletData(userWalletData);
@@ -119,7 +117,6 @@ function MainPage() {
         a.push("present");
       }
     }
-    console.log(a);
     if (a[0] !== "present") {
       for (let i = 0; i < allCurrencies.length; i++) {
         if (selectedOption.value === allCurrencies[i].name) {
@@ -129,7 +126,7 @@ function MainPage() {
       }
       setMyCurrencies((prev) => [...prev, newCurrency]);
       setUserWalletData(myCurrencies);
-      console.log(myCurrencies);
+
     }
   };
 
@@ -141,11 +138,10 @@ function MainPage() {
   const changeDisplayCurrency = (displayOption) => {
     //first, Convert cseturrency to base value;
     setAChange('changes')
-    console.log(displayCurrency);
+
     for (let i = 0; i < allCurrencies.length; i++) {
       if (displayCurrency === allCurrencies[i].name) {
-        setBaseValue(totalBalance * allCurrencies[i].value);
-        console.log(baseValue);
+
       }
 
       if (displayOption.value === allCurrencies[i].name) {
@@ -169,12 +165,12 @@ function MainPage() {
           convertStatus={convertStatus}
         />
       </div>
-      <div className="depositwrapper" style={dep} > 
-      <Deposit           
-      closer={() => {
+      <div className="depositwrapper" style={dep} >
+        <Deposit
+          closer={() => {
             closerFunction();
-          }}/> 
-      
+          }} />
+
       </div>
       <div id='mainmain'>
         <div id='main'>
@@ -211,25 +207,25 @@ function MainPage() {
               <br />
               <div className='wallets'>
                 {
-                myCurrencies.map((item, index) => {
-                  return (
-                    <>
-                      <CurrencyCard
-                        name={item.name}
-                        background={item.background}
-                        logo={item.logo}
-                        sign={item.sign}
-                        balance={item.balance}
-                        onClick={() => {
-                          openConverterWindow();
-                          currentCurrencyUpdate(index);
-                          console.log(currentCurrency);
-                        }}
-                        index={index}
-                      />
-                    </>
-                  );
-                })}
+                  myCurrencies.map((item, index) => {
+                    return (
+                      <>
+                        <CurrencyCard
+                          name={item.name}
+                          background={item.background}
+                          logo={item.logo}
+                          sign={item.sign}
+                          balance={item.balance}
+                          onClick={() => {
+                            openConverterWindow();
+                            currentCurrencyUpdate(index);
+
+                          }}
+                          index={index}
+                        />
+                      </>
+                    );
+                  })}
               </div>
               <section className='addcurrenciessection'>
                 <span className='addc'>ADD CURRENCY</span>
@@ -256,7 +252,7 @@ function MainPage() {
               animationOut='bounceInRight'
             >
               <div className='statsimage'>
-                <img alt = "" src='https://a.c-dn.net/c/content/dam/publicsites/igcom/uk/images/content-2-chart-images/most_trader_currencies%20002%20002%20(002).png' />
+                <img alt="" src='https://a.c-dn.net/c/content/dam/publicsites/igcom/uk/images/content-2-chart-images/most_trader_currencies%20002%20002%20(002).png' />
               </div>
             </AnimatedOnScroll>
           </section>
