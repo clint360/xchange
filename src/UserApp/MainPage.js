@@ -58,8 +58,8 @@ function MainPage() {
           setTotalBalance((prevbalance) => prevbalance / allCurrencies[i].value);
         }
       }
-    setAChange('changes');
-  },[myCurrencies, selectedCurrency, displayCurrency, aChange])
+    setAChange('changess');
+  },[myCurrencies, selectedCurrency, displayCurrency, setAChange, aChange])
 
   useEffect(() => {
     setUserWalletData(userWalletData);
@@ -91,6 +91,7 @@ function MainPage() {
     setOpenDeposit("none")
     setConvertStatus("");
     setConvertTo(null);
+    setAChange('chansges');
   };
 
   const conv = {

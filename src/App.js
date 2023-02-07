@@ -42,7 +42,7 @@ function App() {
       if (apiResponse.hasOwnProperty(key)) {
       console.log(`${index} - ${key}: ${(1/apiResponse[key])}`)
       index = index + 1; 
-      arr.push({ name: key, logo: logo, sign: key, balance: 0, background: bgColor[index%bgColor.length], index, value: (1/apiResponse[key])})
+      arr.push({ name: key, logo: 'https://www.clipartmax.com/png/middle/5-57512_money-bag-blue-black-and-white-money-clipart.png', sign: key, balance: 0, background: bgColor[index%bgColor.length], index, value: (1/apiResponse[key])})
     } 
     } 
     setAllCurrencies(arr)
