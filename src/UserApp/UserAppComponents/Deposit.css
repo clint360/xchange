@@ -1,0 +1,33 @@
+.dwindow {
+    position: absolute;
+    width: 330px;
+    background: white;
+    min-height: 200px;
+    left: 59%;
+    top: 24%;
+    z-index: 9999;
+    border-radius: 15px;
+    padding: 30px;
+    font-size: 22px;
+    font-family: 'Poppins';
+    position: fixed;
+    animation: 0.1s ease-out 0s 1 slidedInTop;
+}
+
+@keyframes slidedInTop {
+    0% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .logosectiona {
+    margin: auto;
+    width: 80px;
+  }
+
+  .logosectiona img {
+    width: 100%;
+  }

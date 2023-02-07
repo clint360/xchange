@@ -19,11 +19,12 @@ function App() {
   const [amount, setAmount] = useState(0);
   const [ apiResponse, setApiResponse ] = useState({});
   const [ allCurrencies, setAllCurrencies ] = useState([])
-  const [ dfrates, setDfRates ] = useState({})
+  const [ myCurrencies, setMyCurrencies ] = useState([ {name: "USD", logo: 'https://www.freevector.com/uploads/vector/preview/6105/FreeVector-Dollar-Sign.jpg', sign: 'USD', balance: 0, background: bgColor[1], value: 1}]);
+  const [ aChange, setAChange ] = useState('');
   const options = {
     method: 'GET',
     url: 'https://api.fastforex.io/fetch-all',
-    params: {from: 'XAF', api_key: 'beba455542-930bf2c945-rpl55n'},
+    params: {from: 'USD', api_key: 'beba455542-930bf2c945-rpl55n'},
     headers: {accept: 'application/json'}
   };
   
@@ -41,21 +42,21 @@ function App() {
       if (apiResponse.hasOwnProperty(key)) {
       console.log(`${index} - ${key}: ${(1/apiResponse[key])}`)
       index = index + 1; 
-      arr.push({name: key, logo: logo, sign: key, balance: 0, background: bgColor[index%bgColor.length], index, value: (1/apiResponse[key])})
+      arr.push({ name: key, logo: logo, sign: key, balance: 0, background: bgColor[index%bgColor.length], index, value: (1/apiResponse[key])})
     } 
     } 
     setAllCurrencies(arr)
-    console.log(allCurrencies) 
+    console.log(allCurrencies)
 
-  },[apiResponse])
+  }, [apiResponse])
 
-  const [ myCurrencies, setMyCurrencies ] = useState([{name: "XAF", logo: 'https://thumbs.dreamstime.com/b/cfa-franc-bceao-cfp-icon-beautiful-meticulously-designed-198352130.jpg', sign: 'XAF', balance: 10000, background: bgColor[2], value: 1},
-  {name: "USD", logo: 'https://www.freevector.com/uploads/vector/preview/6105/FreeVector-Dollar-Sign.jpg', sign: 'USD', balance: 100, background: bgColor[1], value: 602.10},
-  {name: "EUR", logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Euro_symbol.svg/584px-Euro_symbol.svg.png', sign: 'EUR', balance: 500, background: bgColor[0], value: 657.61}]);
- 
+  
+  useEffect(()=> {
+
+  },[])
 
   return (
-    <Provider value={{username, amount, setAmount, setUserName, myCurrencies, setMyCurrencies, currentCurrency, setCurrentCurrency, convertTo, setConvertTo, allCurrencies}}>
+    <Provider value={{username, aChange, setAChange , amount, setAmount, setUserName, myCurrencies, setMyCurrencies, currentCurrency, setCurrentCurrency, convertTo, setConvertTo, allCurrencies}}>
     <BrowserRouter>
     <Routes>
     <Route path='/' element={<LandingPage />}/>

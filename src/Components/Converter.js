@@ -5,7 +5,7 @@ import { MainContext } from '../Hooks/Context';
 import Select from 'react-select';
 
 function Converter({ closer, currency, converter, convertStatus, maxbalance }) {
-  const { convertTo, setConvertTo, myCurrencies, amount, setAmount } = useContext(MainContext);
+  const { convertTo, setConvertTo, myCurrencies, amount, setAmount, setAChange } = useContext(MainContext);
   const [options, setOptions] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
   const inputRef = useRef(null);

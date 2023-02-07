@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from 'react'
+import React, { useState, useRef, useContext, useEffect } from 'react'
 import LandingButton from './LandingButton';
 import './SignUp.css';
 import { Link } from 'react-router-dom';
@@ -13,7 +13,10 @@ function SignUp({close}) {
     setUserName(nameInput.current.value)
   }
   const [ nameche, setNameChe ] = useState('');
-
+  
+  useEffect(()=>{
+    nameInput.current.focus();
+  })
 
   return (
     <div className='thewindow'>

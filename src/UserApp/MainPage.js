@@ -7,6 +7,7 @@ import Footer from "../Components/Footer";
 import { MainContext } from "../Hooks/Context";
 import Converter from "../Components/Converter";
 import Select from "react-select";
+import Deposit from "./UserAppComponents/Deposit";
 
 function MainPage() {
   const {
@@ -18,12 +19,14 @@ function MainPage() {
     currentCurrency,
     setCurrentCurrency,
     allCurrencies,
+    aChange, 
+    setAChange
   } = useContext(MainContext);
   const [selectedCurrency] = useState("");
   const [userWalletData, setUserWalletData] = useState(myCurrencies);
   const [options, setOptions] = useState([]);
   const [convertStatus, setConvertStatus] = useState("");
-  const [displayCurrency, setDisplayCurrency] = useState("XAF");
+  const [displayCurrency, setDisplayCurrency] = useState("USD");
   const [totalBalance, setTotalBalance] = useState(0);
   const [baseValue, setBaseValue] = useState(0);
 
@@ -43,6 +46,7 @@ function MainPage() {
 
  
   useEffect(()=>{
+    setTotalBalance(0);
     for (let i = 0; i < userWalletData.length; i++) {
         setTotalBalance(
           (prevbalance) =>
@@ -54,7 +58,8 @@ function MainPage() {
           setTotalBalance((prevbalance) => prevbalance / allCurrencies[i].value);
         }
       }
-  },[])
+    setAChange('changes');
+  },[myCurrencies, selectedCurrency, displayCurrency, aChange])
 
   useEffect(() => {
     setUserWalletData(userWalletData);
@@ -79,9 +84,11 @@ function MainPage() {
   };
 
   const [openConverter, setOpenConverter] = useState("none");
+  const [openDeposit, setOpenDeposit] = useState("none");
 
   const closerFunction = () => {
     setOpenConverter("none");
+    setOpenDeposit("none")
     setConvertStatus("");
     setConvertTo(null);
   };
@@ -94,7 +101,16 @@ function MainPage() {
     setOpenConverter("initial");
   };
 
+  const openDepositWindow = () => {
+    setOpenDeposit("initial");
+  };
+
+  const dep = {
+    display: openDeposit,
+  };
+
   const addToMyCurrencies = (selectedOption) => {
+    setAChange('changes');
     let newCurrency = {};
     const a = [];
     for (let i = 0; i < myCurrencies.length; i++) {
@@ -107,6 +123,7 @@ function MainPage() {
       for (let i = 0; i < allCurrencies.length; i++) {
         if (selectedOption.value === allCurrencies[i].name) {
           newCurrency = allCurrencies[i];
+          newCurrency.balance = 0;
         }
       }
       setMyCurrencies((prev) => [...prev, newCurrency]);
@@ -117,10 +134,12 @@ function MainPage() {
 
   const currentCurrencyUpdate = (index) => {
     setCurrentCurrency(userWalletData[index]);
+    setAChange('changes')
   };
 
   const changeDisplayCurrency = (displayOption) => {
     //first, Convert cseturrency to base value;
+    setAChange('changes')
     console.log(displayCurrency);
     for (let i = 0; i < allCurrencies.length; i++) {
       if (displayCurrency === allCurrencies[i].name) {
@@ -148,6 +167,13 @@ function MainPage() {
           converter={convert}
           convertStatus={convertStatus}
         />
+      </div>
+      <div className="depositwrapper" style={dep} > 
+      <Deposit           
+      closer={() => {
+            closerFunction();
+          }}/> 
+      
       </div>
       <div id='mainmain'>
         <div id='main'>
@@ -177,13 +203,14 @@ function MainPage() {
                   defaultValue={displayCurrency}
                 />
               </div>
-              <button className='deposit-button'>DEPOSIT</button>
+              <button className='deposit-button' onClick={openDepositWindow}>DEPOSIT</button>
             </div>
             <section id='walletsection'>
               <h1 className='header'>MY CURRENCIES</h1>
               <br />
               <div className='wallets'>
-                {userWalletData.map((item, index) => {
+                {
+                myCurrencies.map((item, index) => {
                   return (
                     <>
                       <CurrencyCard
@@ -204,7 +231,7 @@ function MainPage() {
                 })}
               </div>
               <section className='addcurrenciessection'>
-                <span className='addc'>NEXT CURRENCY</span>
+                <span className='addc'>ADD CURRENCY</span>
                 <div>
                   <Select
                     defaultValue={selectedCurrency}
