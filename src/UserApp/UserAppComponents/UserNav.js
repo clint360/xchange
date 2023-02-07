@@ -19,7 +19,7 @@ function UserNav({username}) {
     <>
     <div id="mainnav" style={navStyle}>
        <div className='logodiv'>
-      <img src={mylogo} alt="my logo" title='Account' />
+      <img src={mylogo} draggable='false' alt="my logo" title='Account' />
       </div>
       <div className='pageslists'>
         <ul type="none">

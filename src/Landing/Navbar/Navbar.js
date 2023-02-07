@@ -17,7 +17,7 @@ function Navbar({width}) {
     <>
     <div id="mainnav" style={navwidth}>
        <div className='logodiv'>
-      <img src={mylogo} alt="my logo" />
+      <img src={mylogo} draggable='false' alt="my logo" />
       </div>
       <div className='pageslists'>
         <ul type="none">

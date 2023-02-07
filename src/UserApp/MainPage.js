@@ -59,7 +59,7 @@ function MainPage() {
         }
       }
     setAChange('changess');
-  },[myCurrencies, selectedCurrency, displayCurrency, setAChange, aChange])
+  },[myCurrencies, selectedCurrency, displayCurrency, setAChange, aChange, userWalletData, allCurrencies])
 
   useEffect(() => {
     setUserWalletData(userWalletData);
