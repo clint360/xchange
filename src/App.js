@@ -24,7 +24,7 @@ function App() {
   const options = {
     method: 'GET',
     url: 'https://api.fastforex.io/fetch-all',
-    params: {from: 'USD', api_key: 'beba455542-930bf2c945-rpl55n'},
+    params: {from: 'USD', api_key: 'd658f15a03-397fd48340-rtgo7y'},
     headers: {accept: 'application/json'}
   };
   
