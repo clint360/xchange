@@ -34,14 +34,14 @@ function Deposit({ closer, currency, depositer, depositStatus, maxbalance }) {
 
 
     return (
-        <div className='dwindow'>
+        <div className='dwindow' >
           <div className='closebutton' onClick={() => { closer() }}><i class="fa-solid fa-x"></i></div>
           <div className='logosectiona'>
-            <img src={logo} alt='' />
+            <img draggable='false' src={logo} alt='' />
           </div>
           <div className='conversions'>
             <span>DEPOSIT </span>
-            <input type='number' ref={inputRef} max={maxbalance}/>{currency}
+            <input type='number' ref={inputRef} max={maxbalance} required/>{currency}
             <br />
             <div className='m-2'>
               <span>Into</span>

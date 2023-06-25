@@ -8,7 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import axios from 'axios';
 import logo from './Assets/logo192.svg'
 
-const bgColor = ['#000040', '#152850', '#4358a2']
+const bgColor = ['#000040', '#152850']
 
 
 
@@ -40,13 +40,13 @@ function App() {
     let arr = [];
     for (const key in apiResponse)  { 
       if (apiResponse.hasOwnProperty(key)) {
-      console.log(`${index} - ${key}: ${(1/apiResponse[key])}`)
+
       index = index + 1; 
       arr.push({ name: key, logo: 'https://www.clipartmax.com/png/middle/5-57512_money-bag-blue-black-and-white-money-clipart.png', sign: key, balance: 0, background: bgColor[index%bgColor.length], index, value: (1/apiResponse[key])})
     } 
     } 
     setAllCurrencies(arr)
-    console.log(allCurrencies)
+
 
   }, [apiResponse])
 
@@ -60,7 +60,7 @@ function App() {
     <BrowserRouter>
     <Routes>
     <Route path='/' element={<LandingPage />}/>
-     <Route path='/app' element={<MainPage />} />
+     <Route path='/app' element={<MainPage />}  />
     </Routes>
     </BrowserRouter>
     </Provider>
